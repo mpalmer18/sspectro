@@ -1,0 +1,366 @@
+<xml xmlns="http://www.w3.org/1999/xhtml">
+  <block type="oled_cleardisplay" id="1" x="-64" y="-11">
+    <next>
+      <block type="controls_whileUntil" id="2" inline="false">
+        <field name="MODE">UNTIL</field>
+        <value name="NUMBER">
+          <block type="sensor_button" id="3">
+            <field name="OBJECT">ENTER</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="variables_set" id="4" inline="true">
+            <field name="VAR">blue</field>
+            <value name="VALUE">
+              <block type="sensor_spectrometer" id="5">
+                <field name="LIGHT">BLUE</field>
+              </block>
+            </value>
+            <next>
+              <block type="variables_set" id="27" inline="true">
+                <field name="VAR">green</field>
+                <value name="VALUE">
+                  <block type="sensor_spectrometer" id="28">
+                    <field name="LIGHT">GREEN</field>
+                  </block>
+                </value>
+                <next>
+                  <block type="variables_set" id="33" inline="true">
+                    <field name="VAR">yellow</field>
+                    <value name="VALUE">
+                      <block type="sensor_spectrometer" id="34">
+                        <field name="LIGHT">YELLOW</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="35" inline="true">
+                        <field name="VAR">red</field>
+                        <value name="VALUE">
+                          <block type="sensor_spectrometer" id="36">
+                            <field name="LIGHT">RED</field>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="variables_set" id="37" inline="true">
+                            <field name="VAR">ir880</field>
+                            <value name="VALUE">
+                              <block type="sensor_spectrometer" id="38">
+                                <field name="LIGHT">IR880</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="variables_set" id="39" inline="true">
+                                <field name="VAR">ir940</field>
+                                <value name="VALUE">
+                                  <block type="sensor_spectrometer" id="40">
+                                    <field name="LIGHT">IR940</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="oled_setcursor" id="6" inline="true">
+                                    <value name="STARTX">
+                                      <block type="math_number" id="7">
+                                        <field name="NUM">10</field>
+                                      </block>
+                                    </value>
+                                    <value name="STARTY">
+                                      <block type="math_number" id="8">
+                                        <field name="NUM">0</field>
+                                      </block>
+                                    </value>
+                                    <next>
+                                      <block type="oled_drawtext" id="9">
+                                        <field name="TEXT">Blue   = </field>
+                                        <next>
+                                          <block type="procedures_callnoreturn" id="10" inline="false">
+                                            <mutation name="displayValue">
+                                              <arg name="value"></arg>
+                                              <arg name="Row"></arg>
+                                            </mutation>
+                                            <value name="ARG0">
+                                              <block type="variables_get" id="11">
+                                                <field name="VAR">blue</field>
+                                              </block>
+                                            </value>
+                                            <value name="ARG1">
+                                              <block type="math_number" id="12">
+                                                <field name="NUM">0</field>
+                                              </block>
+                                            </value>
+                                            <next>
+                                              <block type="oled_setcursor" id="49" inline="true">
+                                                <value name="STARTX">
+                                                  <block type="math_number" id="50">
+                                                    <field name="NUM">10</field>
+                                                  </block>
+                                                </value>
+                                                <value name="STARTY">
+                                                  <block type="math_number" id="51">
+                                                    <field name="NUM">10</field>
+                                                  </block>
+                                                </value>
+                                                <next>
+                                                  <block type="oled_drawtext" id="29">
+                                                    <field name="TEXT">Green  = </field>
+                                                    <next>
+                                                      <block type="procedures_callnoreturn" id="30" inline="false">
+                                                        <mutation name="displayValue">
+                                                          <arg name="value"></arg>
+                                                          <arg name="Row"></arg>
+                                                        </mutation>
+                                                        <value name="ARG0">
+                                                          <block type="variables_get" id="31">
+                                                            <field name="VAR">green</field>
+                                                          </block>
+                                                        </value>
+                                                        <value name="ARG1">
+                                                          <block type="math_number" id="32">
+                                                            <field name="NUM">10</field>
+                                                          </block>
+                                                        </value>
+                                                        <next>
+                                                          <block type="oled_setcursor" id="52" inline="true">
+                                                            <value name="STARTX">
+                                                              <block type="math_number" id="53">
+                                                                <field name="NUM">10</field>
+                                                              </block>
+                                                            </value>
+                                                            <value name="STARTY">
+                                                              <block type="math_number" id="54">
+                                                                <field name="NUM">20</field>
+                                                              </block>
+                                                            </value>
+                                                            <next>
+                                                              <block type="oled_drawtext" id="41">
+                                                                <field name="TEXT">Yellow = </field>
+                                                                <next>
+                                                                  <block type="procedures_callnoreturn" id="42" inline="false">
+                                                                    <mutation name="displayValue">
+                                                                      <arg name="value"></arg>
+                                                                      <arg name="Row"></arg>
+                                                                    </mutation>
+                                                                    <value name="ARG0">
+                                                                      <block type="variables_get" id="43">
+                                                                        <field name="VAR">yellow</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <value name="ARG1">
+                                                                      <block type="math_number" id="44">
+                                                                        <field name="NUM">20</field>
+                                                                      </block>
+                                                                    </value>
+                                                                    <next>
+                                                                      <block type="oled_setcursor" id="55" inline="true">
+                                                                        <value name="STARTX">
+                                                                          <block type="math_number" id="56">
+                                                                            <field name="NUM">10</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <value name="STARTY">
+                                                                          <block type="math_number" id="57">
+                                                                            <field name="NUM">30</field>
+                                                                          </block>
+                                                                        </value>
+                                                                        <next>
+                                                                          <block type="oled_drawtext" id="45">
+                                                                            <field name="TEXT">red    = </field>
+                                                                            <next>
+                                                                              <block type="procedures_callnoreturn" id="46" inline="false">
+                                                                                <mutation name="displayValue">
+                                                                                  <arg name="value"></arg>
+                                                                                  <arg name="Row"></arg>
+                                                                                </mutation>
+                                                                                <value name="ARG0">
+                                                                                  <block type="variables_get" id="47">
+                                                                                    <field name="VAR">red</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <value name="ARG1">
+                                                                                  <block type="math_number" id="48">
+                                                                                    <field name="NUM">30</field>
+                                                                                  </block>
+                                                                                </value>
+                                                                                <next>
+                                                                                  <block type="oled_setcursor" id="58" inline="true">
+                                                                                    <value name="STARTX">
+                                                                                      <block type="math_number" id="59">
+                                                                                        <field name="NUM">10</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <value name="STARTY">
+                                                                                      <block type="math_number" id="60">
+                                                                                        <field name="NUM">40</field>
+                                                                                      </block>
+                                                                                    </value>
+                                                                                    <next>
+                                                                                      <block type="oled_drawtext" id="61">
+                                                                                        <field name="TEXT">880nm  = </field>
+                                                                                        <next>
+                                                                                          <block type="procedures_callnoreturn" id="62" inline="false">
+                                                                                            <mutation name="displayValue">
+                                                                                              <arg name="value"></arg>
+                                                                                              <arg name="Row"></arg>
+                                                                                            </mutation>
+                                                                                            <value name="ARG0">
+                                                                                              <block type="variables_get" id="63">
+                                                                                                <field name="VAR">ir880</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <value name="ARG1">
+                                                                                              <block type="math_number" id="64">
+                                                                                                <field name="NUM">40</field>
+                                                                                              </block>
+                                                                                            </value>
+                                                                                            <next>
+                                                                                              <block type="oled_setcursor" id="65" inline="true">
+                                                                                                <value name="STARTX">
+                                                                                                  <block type="math_number" id="66">
+                                                                                                    <field name="NUM">10</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <value name="STARTY">
+                                                                                                  <block type="math_number" id="67">
+                                                                                                    <field name="NUM">50</field>
+                                                                                                  </block>
+                                                                                                </value>
+                                                                                                <next>
+                                                                                                  <block type="oled_drawtext" id="68">
+                                                                                                    <field name="TEXT">940nm  = </field>
+                                                                                                    <next>
+                                                                                                      <block type="procedures_callnoreturn" id="69" inline="false">
+                                                                                                        <mutation name="displayValue">
+                                                                                                          <arg name="value"></arg>
+                                                                                                          <arg name="Row"></arg>
+                                                                                                        </mutation>
+                                                                                                        <value name="ARG0">
+                                                                                                          <block type="variables_get" id="70">
+                                                                                                            <field name="VAR">ir940</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <value name="ARG1">
+                                                                                                          <block type="math_number" id="71">
+                                                                                                            <field name="NUM">50</field>
+                                                                                                          </block>
+                                                                                                        </value>
+                                                                                                        <next>
+                                                                                                          <block type="robot_delay" id="13" inline="true">
+                                                                                                            <value name="DELAY">
+                                                                                                              <block type="math_number" id="14">
+                                                                                                                <field name="NUM">250</field>
+                                                                                                              </block>
+                                                                                                            </value>
+                                                                                                          </block>
+                                                                                                        </next>
+                                                                                                      </block>
+                                                                                                    </next>
+                                                                                                  </block>
+                                                                                                </next>
+                                                                                              </block>
+                                                                                            </next>
+                                                                                          </block>
+                                                                                        </next>
+                                                                                      </block>
+                                                                                    </next>
+                                                                                  </block>
+                                                                                </next>
+                                                                              </block>
+                                                                            </next>
+                                                                          </block>
+                                                                        </next>
+                                                                      </block>
+                                                                    </next>
+                                                                  </block>
+                                                                </next>
+                                                              </block>
+                                                            </next>
+                                                          </block>
+                                                        </next>
+                                                      </block>
+                                                    </next>
+                                                  </block>
+                                                </next>
+                                              </block>
+                                            </next>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+  <block type="procedures_defnoreturn" id="15" x="367" y="14">
+    <mutation>
+      <arg name="value"></arg>
+      <arg name="Row"></arg>
+    </mutation>
+    <field name="NAME">displayValue</field>
+    <statement name="STACK">
+      <block type="controls_if" id="16" inline="false">
+        <mutation elseif="1" else="1"></mutation>
+        <value name="IF0">
+          <block type="logic_compare" id="17" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="18">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="19">
+                <field name="NUM">99</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <value name="IF1">
+          <block type="logic_compare" id="20" inline="true">
+            <field name="OP">GT</field>
+            <value name="A">
+              <block type="variables_get" id="21">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+            <value name="B">
+              <block type="math_number" id="22">
+                <field name="NUM">9</field>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO1">
+          <block type="oled_drawtext" id="23">
+            <field name="TEXT"> </field>
+          </block>
+        </statement>
+        <statement name="ELSE">
+          <block type="oled_drawtext" id="24">
+            <field name="TEXT">  </field>
+          </block>
+        </statement>
+        <next>
+          <block type="oled_drawnumber" id="25" inline="true">
+            <value name="NUMBER">
+              <block type="variables_get" id="26">
+                <field name="VAR">value</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </statement>
+  </block>
+</xml>
