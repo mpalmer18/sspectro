@@ -1,7 +1,9 @@
 sspectro
 ========
 
-Scratch Program to demonstrate the operation of the Spectrometer.
+Scratch:
+
+Program to demonstrate the operation of the Spectrometer.
 
 ### Project Information
 ```
